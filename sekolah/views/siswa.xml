@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+		<record id="view_sekolah_siswa_tree" model="ir.ui.view">
+			<field name="name">sekolah.siswa.tree</field>
+			<field name="model">sekolah.siswa</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+				<tree string="course">
+					<field name="name"/>
+					<field name="kelas"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_sekolah_siswa_form" model="ir.ui.view">
+			<field name="name">sekolah.siswa.form</field>
+			<field name="model">sekolah.siswa</field>
+			<field name="type">form</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+
+				<form string="Siswa Form">
+				  	<sheet>
+						<div class="oe_title">
+							<label for="name" class="oe_edit_only" string="Nama Siswa"></label>
+							<h1>
+								<field name="name"/>
+							</h1>
+						</div>
+
+						<group>
+							<field name="kelas" widget="selection"/>
+						</group>
+				  	</sheet>
+				</form>
+			</field>
+		</record>
+
+		
+		<!-- <act_window id="edit_kelas_wizard"
+           multi="True"
+           key2="client_action_multi" name="Ubah Kelas"
+           res_model="sekolah.edit.kelas.wizard" src_model="sekolah.siswa"
+           view_mode="form" target="new" view_type="form"/> -->
+	
+	</data>
+</odoo>

@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sekolah_siswa_super_admin,sekolah_siswa,model_sekolah_siswa,sekolah_group_super_admin,1,1,1,1
+sekolah_matapelajaran_super_admin,sekolah_matapelajaran,model_sekolah_matapelajaran,sekolah_group_super_admin,1,1,1,1
+sekolah_t_ujian_super_admin,sekolah_t_ujian,model_sekolah_t_ujian,sekolah_group_super_admin,1,1,1,1
+sekolah_t_ujian_det_super_admin,sekolah_t_ujian_det,model_sekolah_t_ujian_det,sekolah_group_super_admin,1,1,1,1
+
+sekolah_siswa_member,sekolah_siswa,model_sekolah_siswa,sekolah_group_member,1,0,0,0
+sekolah_matapelajaran_member,sekolah_matapelajaran,model_sekolah_matapelajaran,sekolah_group_member,1,0,0,0
+sekolah_t_ujian_member,sekolah_t_ujian,model_sekolah_t_ujian,sekolah_group_member,1,0,0,0

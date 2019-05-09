@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+		<record model="ir.actions.act_window" id="evalu_wizard_action">
+			<field name="name">Evalu Wizard</field>
+			<field name="res_model">sekolah.custom.evalu.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<record model="ir.ui.view" id="evalu_form_view">
+			<field name="name">sekolah.custom.evalu.wizard.form</field>
+			<field name="model">sekolah.custom.evalu.wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Add eval" version="7.0">
+					<group>
+						<field name="ekskul_id" />
+						<field name="trainer_id" />
+					</group>
+					<notebook>
+						<page string="Evalu">
+							<field name="siswa_ids" >
+								<tree string="Evalu">
+									<field name="siswa_id" />
+									<field name="nilai" />
+								</tree>
+							</field>
+						</page>
+					</notebook>
+					<footer>
+						<button type="special" special="cancel" string="Cancel" icon="fa-times"/>
+						<button type="object" name="add_evalu_wizard" string="Generate Evaluasi" icon="fa-check-circle" confirm="Are you sure?" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<menuitem name="Tambah Evaluasi" 
+			parent="custom_1" 
+			id="evalu_wizard_menu" 
+			sequence="40" 
+			action="evalu_wizard_action"/>
+
+		<act_window id="evalu_wizard"
+			name="Tambah Evaluasi"
+			src_model="sekolah.custom.ekskul"
+			res_model="sekolah.custom.evalu.wizard"
+			view_mode="form"
+			target="new"
+			key2="client_action_multi"/>
+	</data>
+</odoo>

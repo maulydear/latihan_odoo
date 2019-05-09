@@ -1,0 +1,87 @@
+<odoo>
+	<data>
+
+		<record id='action_ekskul' model='ir.actions.act_window'>
+			<field name='name'>Ekskul</field>
+			<field name='res_model'>sekolah.custom.ekskul</field>
+			<field name='view_mode'>tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add Ekskul
+				</p>
+			  <p>klik tombol create untuk tambah ekskul baru</p>
+			</field>
+		</record>
+
+		<record id='action_trainer' model='ir.actions.act_window'>
+			<field name='name'>Trainer</field>
+			<field name='res_model'>sekolah.custom.trainer</field>
+			<field name='view_mode'>tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add Trainer
+				</p>
+			  <p>klik tombol create untuk tambah trainer baru</p>
+			</field>
+		</record>
+
+		<record id='action_evaluasi' model='ir.actions.act_window'>
+			<field name='name'>Evaluasi</field>
+			<field name='res_model'>sekolah.custom.evaluasi</field>
+			<field name='view_mode'>tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add Evaluasi
+				</p>
+			  <p>klik tombol create untuk tambah evaluasi baru</p>
+			</field>
+		</record>
+
+		<record id='action_evaluasi_det' model='ir.actions.act_window'>
+			<field name='name'>Evaluasi Detail</field>
+			<field name='res_model'>sekolah.custom.evaluasi.det</field>
+			<field name='view_mode'>tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add Evaluasi Det
+				</p>
+			  <p>klik tombol create untuk tambah evaluasi det baru</p>
+			</field>
+		</record>
+
+
+		<menuitem id="custom_0"
+			name="Custom"
+		/>
+
+		<menuitem id="custom_1"
+			name="Custom"
+			parent="custom_0"
+		/>
+
+		<menuitem id="menu_custom_ekskul"
+			name="Ekskul"
+			parent="custom_1"
+			action="action_ekskul"
+		/>
+
+		<menuitem id="menu_custom_trainer"
+			name="Trainer"
+			parent="custom_1"
+			action="action_trainer"
+		/>
+
+		<menuitem id="menu_custom_evaluasi"
+			name="Evaluasi"
+			parent="custom_1"
+			action="action_evaluasi"
+		/>
+
+		<menuitem id="menu_custom_evaluasi_det"
+			name="Evaluasi Detail"
+			parent="custom_1"
+			action="action_evaluasi_det"
+		/>
+
+	</data>
+</odoo>

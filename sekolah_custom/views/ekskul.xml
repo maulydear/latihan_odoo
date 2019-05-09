@@ -1,0 +1,41 @@
+<odoo>
+	<data>
+		<record id="view_sekolah_custom_ekskul_tree" model="ir.ui.view">
+			<field name="name">sekolah.custom.ekskul.tree</field>
+			<field name="model">sekolah.custom.ekskul</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+				<tree string="eksul">
+					<field name="name"/>
+					<field name="siswa_ids"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_sekolah_custom_ekskul_form" model="ir.ui.view">
+			<field name="name">sekolah.custom.ekskul.form</field>
+			<field name="model">sekolah.custom.ekskul</field>
+			<field name="type">form</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+				<form string="Ekskul Form">
+				  	<sheet>
+						<label for="name" class="oe_edit_only" string="Nama Ekskul"></label>
+						<h1>
+							<field name="name"/>
+							<button type="object" name="generate_eval" string="Generate Evaluasi"></button>
+						</h1>
+						<notebook>
+							<page string="Siswa">
+								<tree string="Siswa">
+									<field name="siswa_ids" />
+								</tree>
+							</page>
+						</notebook>
+				  	</sheet>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+		<record id="view_sekolah_custom_evaluasi_det_tree" model="ir.ui.view">
+			<field name="name">sekolah.custom.evaluasi.det.tree</field>
+			<field name="model">sekolah.custom.evaluasi.det</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+				<tree string="evaluasi_det">
+					<field name="evaluasi_id"/>
+					<field name="siswa_id"/>
+					<field name="nilai"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_sekolah_custom_evaluasi_det_form" model="ir.ui.view">
+			<field name="name">sekolah.custom.evaluasi.det.form</field>
+			<field name="model">sekolah.custom.evaluasi.det</field>
+			<field name="type">form</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+				<form string="Evaluasi Detail Form">
+				  <sheet>
+					<group>
+						<field name="evaluasi_id"/>
+						<field name="siswa_id"/>
+						<field name="nilai"/>
+					</group>
+				  </sheet>
+				</form>
+			</field>
+		</record>	
+	</data>
+</odoo>

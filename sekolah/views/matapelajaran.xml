@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+		<record id="view_sekolah_matapelajaran_tree" model="ir.ui.view">
+			<field name="name">sekolah.matapelajaran.tree</field>
+			<field name="model">sekolah.matapelajaran</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+				<tree string="matapelajaran">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_sekolah_matapelajaran_form" model="ir.ui.view">
+			<field name="name">sekolah.matapelajaran.form</field>
+			<field name="model">sekolah.matapelajaran</field>
+			<field name="type">form</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+
+				<form string="Mata Pelajaran Form">
+				  <sheet>
+					<div class="oe_title">
+						<label for="name" class="oe_edit_only" string="Nama Matapelajaran"></label>
+						<h1>
+							<field name="name"/>
+						</h1>
+					</div>
+				  </sheet>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</odoo>

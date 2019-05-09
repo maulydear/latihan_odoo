@@ -1,0 +1,59 @@
+<odoo> 
+
+    <report id="action_sekolah_custom_laporan_trainer"
+        report_type="qweb-pdf"
+        model="sekolah.custom.trainer"
+        string="Trainer Report"
+        name="sekolah_custom.report_laporan_trainer"
+        file="sekolah_custom.report_laporan_trainer" 
+    />
+
+    <template id="report_laporan_trainer">
+        <t t-call="web.basic_layout">
+           <div class="page">
+                <t t-foreach="request.env['sekolah.custom.evaluasi'].search([('trainer_id', 'in', doc_ids)])" t-as="obj">
+                    <t t-call="sekolah_custom.laporan_trainer">
+                        <t t-set="obj" t-value="obj"/>
+                    </t>
+                </t>
+           </div>
+       </t>
+    </template>
+
+    <template id="laporan_trainer">
+        <div class="row mt32 mb32">
+           <div class="col-4" style="padding:0;">
+                <table class="table table-condensed" style="border-bottom: 1px solid black !important;width: 10in;">       
+                    <tr>
+                        <th class="text-left">Trainer : </th>
+                        <td style="text-align: left;">
+                           <strong t-field="obj.trainer_id"/>
+                        </td>    
+                    </tr>
+                    <tr>
+                        <th class="text-left">Ekstrakurikuler : </th>
+                        <td>
+                           <strong t-field="obj.ekskul_id"/>
+                        </td>
+                    </tr>
+                    <t t-foreach="obj.evaluasi_det_ids" t-as="det">
+                        <tr>
+                            <td style="text-align: center;">
+                               <p t-field="det.siswa_id"/>
+                           </td>
+                            <td style="text-align: center;">
+                               <p t-field="det.nilai"/>
+                           </td>
+                        </tr>
+                    </t>
+                    <tr>
+                        <th class="text-right">Rata-rata : </th>
+                        <td style="text-align: center;">
+                           <strong t-field="obj.rata_rata"/>
+                        </td>
+                    </tr>
+                </table>
+           </div>
+        </div>
+    </template>
+</odoo>

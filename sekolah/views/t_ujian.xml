@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+		<record id="view_sekolah_t_ujian_tree" model="ir.ui.view">
+			<field name="name">sekolah.t_ujian.tree</field>
+			<field name="model">sekolah.t_ujian</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+				<tree string="t_ujian">
+					<field name="siswa_id"/>
+					<field name="tgl_ujian"/>
+					<field name="rata_rata"/>
+					<field name="t_ujian_det_ids" widget="many2many_tags"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_sekolah_t_ujian_form" model="ir.ui.view">
+			<field name="name">sekolah.t_ujian.form</field>
+			<field name="model">sekolah.t_ujian</field>
+			<field name="type">form</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+
+				<form string="Ujian Form">
+				  <sheet>					
+					<group>
+						<field name="tgl_ujian" widget="calendar"/>
+						<field name="siswa_id"/>
+					</group>
+					<notebook>
+						<page string="Ujian">
+							<field name="t_ujian_det_ids">
+								<tree string="Ujian">
+									<field name="matapelajaran_id" />
+									<field name="nilai" />
+								</tree>
+							</field>
+						</page>
+					</notebook>
+					<group>
+						<field name="rata_rata"/>
+					</group>
+				  </sheet>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</odoo>

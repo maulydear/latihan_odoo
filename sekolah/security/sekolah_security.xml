@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id='category_sekolah' model='ir.module.category'>
+       <field name='name'>Sekolah</field>
+       <field name="sequence">150</field>
+    </record>
+    <record id="sekolah_group_member" model="res.groups">
+       <field name="name">Read Only</field>
+       <field name="category_id" ref="category_sekolah"/>
+    </record>
+    <record id="sekolah_group_super_admin" model="res.groups">
+       <field name="name">Super admin</field>
+       <field name="category_id" ref="category_sekolah"/>
+       <field name="implied_ids" eval="[(4, ref('sekolah_group_member'))]"/>
+    </record>
+ </odoo>

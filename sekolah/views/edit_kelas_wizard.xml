@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+	<record id="edit_kelas_wizard_action" model="ir.actions.act_window">
+		<field name="name">Ubah Kelas</field>
+		<field name="res_model">sekolah.edit.kelas.wizard</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+
+	<record id="edit_kelas_wizard_form" model="ir.ui.view">
+			<field name="name">sekolah.edit.kelas.wizard.form</field>
+			<field name="model">sekolah.edit.kelas.wizard</field>
+			<field name="type">form</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+					<form string="Kelas">
+            			<group>
+                			<field name="kelas"/>
+            			</group>
+			            <footer>
+			                <button name="change_class" string="Save" type="object" class="oe_highlight" />
+			                <button string="Cancel" class="oe_link" special="cancel"/>
+			            </footer>
+			        </form>
+			</field>
+		</record>
+
+	<act_window id="edit_kelas_wizard"
+			name="Ubah Kelas"
+			src_model="sekolah.siswa"
+			res_model="sekolah.edit.kelas.wizard"
+			view_mode="form"
+			target="new"
+			key2="client_action_multi"/>
+</odoo>
